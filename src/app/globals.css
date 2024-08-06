@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 25, 25, 25;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+.select__control {
+  border-radius: 0 !important;
+  border-color: transparent !important;
+  border-left: 2px solid #71717a !important;
+  border-top: 2px solid #71717a !important;
+  box-shadow: none !important;
+}
+
+.select__control:hover {
+  border-radius: 0 !important;
+  border-color: transparent !important;
+  border-left: 2px solid #71717a !important;
+  border-top: 2px solid #71717a !important;
+  box-shadow: none !important;
+}
+
+.select__menu,
+.select__menu-list {
+  border-radius: 0 !important;
+  color: #000 !important;
+}
+
+.select__option--is-focused {
+  background-color: #1e3a8a !important;
+  color: #fff !important;
+}
+.select__option--is-selected {
+  background-color: #172554 !important;
+  color: #fff !important;
+}
