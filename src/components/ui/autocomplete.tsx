@@ -8,6 +8,7 @@ export default function Autocomplete({ options }: { options: BossHint[] }) {
   return (
     <Select
       classNamePrefix="select"
+      instanceId="bosses-select"
       className="w-[360px]"
       isDisabled={pending}
       isClearable={false}
