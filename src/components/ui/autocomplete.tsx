@@ -14,6 +14,7 @@ export default function Autocomplete({ options }: { options: BossHint[] }) {
       isSearchable={true}
       name="guess"
       placeholder="Boss name..."
+      required
       options={options}
       getOptionLabel={(option) => option.name}
       getOptionValue={(option) => JSON.stringify(option)}

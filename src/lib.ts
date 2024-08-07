@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 import clsx, { ClassValue } from "clsx";
 
 export type Boss = {
-  id: string;
+  id?: string;
   name: string;
   image: string;
   location: string;

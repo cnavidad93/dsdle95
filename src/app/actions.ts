@@ -1,4 +1,5 @@
 import "server-only";
+import dbData from "../../public/ds1.json";
 
 import {
   Boss,
@@ -20,25 +21,7 @@ const MAX_TRIES = 6;
 const INTERNAL__fetchBoss = () => {
   return new Promise<Boss>((resolve) => {
     setTimeout(() => {
-      resolve({
-        id: "4",
-        name: "Dark Sun Gwyndolin",
-        game: "Dark Souls 1",
-        image:
-          "/2650e21200d93e08587965b479f8cdab/2650e21200d93e08587965b479f8cdab.jpg",
-        location: "Anor Londo",
-        currency: 40000,
-        optional: true,
-        phases: false,
-        steps: [
-          "/2650e21200d93e08587965b479f8cdab/93669188197d171b073c18c42413a139.jpg",
-          "/2650e21200d93e08587965b479f8cdab/02fc9ca4dbebddf14e1c34f08cdeb197.jpg",
-          "/2650e21200d93e08587965b479f8cdab/4f2cf4e303a70da40dd0eb7dd1fe9d03.jpg",
-          "/2650e21200d93e08587965b479f8cdab/e7590e4864defcd25a066a38cd9bfca3.jpg",
-          "/2650e21200d93e08587965b479f8cdab/02a91ff03fd8558175bc73a769d9411a.jpg",
-          "/2650e21200d93e08587965b479f8cdab/65b4bec5acb6932ceb85976db162d948.jpg",
-        ],
-      });
+      resolve(dbData[4] as Boss);
     }, 300);
   });
 };
@@ -46,62 +29,16 @@ const INTERNAL__fetchBoss = () => {
 const INTERNAL__fetchOptions = () => {
   return new Promise<BossHint[]>((resolve) => {
     setTimeout(() => {
-      resolve([
-        {
-          id: "1",
-          name: "Capra Demon",
-          game: "Dark Souls 1",
-          location: "Undead Burg",
-          currency: 6000,
-          optional: true,
-          phases: false,
-        },
-        {
-          id: "2",
-          name: "Centipede Demon",
-          game: "Dark Souls 1",
-          location: "Demon Ruins",
-          currency: 40000,
-          optional: true,
-          phases: false,
-        },
-        {
-          id: "3",
-          name: "Crossbreed Priscilla",
-          game: "Dark Souls 1",
-          location: "Painted World of Ariamis",
-          currency: 30000,
-          optional: true,
-          phases: false,
-        },
-        {
-          id: "4",
-          name: "Dark Sun Gwyndolin",
-          game: "Dark Souls 1",
-          location: "Anor Londo",
-          currency: 40000,
-          optional: true,
-          phases: false,
-        },
-        {
-          id: "5",
-          name: "Demon Firesage",
-          game: "Dark Souls 1",
-          location: "Demon Ruins",
-          currency: 20000,
-          optional: true,
-          phases: false,
-        },
-        {
-          id: "6",
-          name: "Gaping Dragon",
-          game: "Dark Souls 1",
-          location: "Depths",
-          currency: 25000,
-          optional: true,
-          phases: false,
-        },
-      ]);
+      resolve(
+        (dbData as Boss[]).map((boss) => ({
+          name: boss.name,
+          game: boss.game,
+          location: boss.location,
+          currency: boss.currency,
+          optional: boss.optional,
+          phases: boss.phases,
+        })),
+      );
     }, 300);
   });
 };
