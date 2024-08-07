@@ -9,7 +9,7 @@ export default async function Test() {
   const session = await getSession();
   const options = await fetchOptions();
   const filteredOptions = options.filter(
-    (option) => !session.optionsUsed.includes(option.id),
+    (option) => !session.optionsUsed.includes(option.id || ""),
   );
   const gameFinished = session.isGameover || session.isWinner;
 
